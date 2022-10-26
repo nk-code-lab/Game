@@ -4,7 +4,6 @@ canvas {
     background-color: rgb(1, 18, 1);
     /* background-image: url("back.jpg"); */
     position: center;
-    border:5px , solid wheat;
     /* left: 60px;
     top: 300px; */
 }
@@ -21,9 +20,9 @@ canvas {
 }
 .gamebutton {
     position: absolute;
+    top: 30%;
     text-align: center;
-    left: 210px;
-    top: 680px;
+    left: 80px;
 }
 #leftbtn {
     margin-right: 60px;
