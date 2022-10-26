@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="canvas.css">
+    <title>Flying Game</title>
+</head>
+<body onload="startGame()">
+    <!-- <button onclick="startGame()" class="play">START</button> -->
+    <div class="gamebutton">
+        <button class="gamebtn" onmousedown="moveup()" onmouseup="clearmove()" ontouchstart="moveup()">UP</button><br><br>
+        <button class="gamebtn" id="leftbtn" onmousedown="moveleft()" onmouseup="clearmove()" ontouchstart="moveleft()">LEFT</button>
+        <button class="gamebtn" id="rightbtn" onmousedown="moveright()" onmouseup="clearmove()" ontouchstart="moveright()">RIGHT</button><br><br>
+        <button class="gamebtn" onmousedown="movedown()" onmouseup="clearmove()" ontouchstart="movedown()">DOWN</button>
+    </div>
+    <script src="canvas.js"></script>   
+</body>
+</html>
+
+<!-- Help : https://www.w3schools.com/graphics/game_images.asp -->
