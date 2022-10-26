@@ -15,7 +15,8 @@ canvas {
 
 }
 .gamebutton {
-    position: absolute;
+    position: relative;
+    top : 10px;
     text-align: center;
     left: 80px;
 }
