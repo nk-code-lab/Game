@@ -5,9 +5,14 @@
 }
 canvas {
     width: 100%;
+<<<<<<< HEAD
     height: 1010px;
     background-color: rgb(5, 0, 6);
     cursor: pointer;
+=======
+    height: 70%;
+    background-color: rgb(1, 18, 1);
+>>>>>>> 75afc11ef733b5b5794c29274a166b26711c3edd
 }
 .play {
     text-align: center;
@@ -21,6 +26,7 @@ canvas {
 
 }
 .gamebutton {
+<<<<<<< HEAD
     position: absolute;
     left: 200px;
     bottom: 50px;
@@ -62,6 +68,10 @@ canvas {
 }
 #rightbtn{
     background-color: #efe703;
+=======
+    text-align: center;
+    left: 80px;
+>>>>>>> 75afc11ef733b5b5794c29274a166b26711c3edd
 }
 #leftbtn {
     margin-right: 60px;
@@ -70,6 +80,9 @@ canvas {
     background-color: rgb(13, 248, 48);
 }
 .gamebtn {
+    
+    position: relative;
+    top : 10px;
     background: #3498db;
     background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
     background-image: -moz-linear-gradient(top, #3498db, #2980b9);
