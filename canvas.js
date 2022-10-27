@@ -120,7 +120,7 @@ function updateGameArea()
         minHeight = 20;
         maxHeight = 200;
         height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
-        minGap = 60;
+        minGap = 70;
         maxGap = 200;
         gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
         myGameEnemy.push (new component(10,height,"red",x,0));
