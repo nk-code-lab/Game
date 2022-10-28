@@ -2,6 +2,8 @@ var myGameArea;
 var myGamePlayer;
 var myGameEnemy = [];
 var myscore;
+var mySound;
+var myBgMusic;
 
 
 function startGame()
@@ -10,6 +12,9 @@ function startGame()
     myGamePlayer = new component(60,40,"plane.png",10,160,"image");
     // myGamePlayer = new component(50,40,"green",10,160);
     myScore = new component("30px","consolas", "white",400,30,"text");
+    mySound = new sound("bounce.mp3");
+    myBgMusic = new sound("backgroundmusic.mp3");
+    myBgMusic.play();
 }
 myGameArea = 
 {
@@ -18,10 +23,22 @@ myGameArea =
     {
         this.canvas.width = 600;
         this.canvas.height = 350;
+        this.canvas.style.cursor = "none";
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas,document.body.childNodes[0]);
         this.frameNo = 0;
         this.interval = setInterval(updateGameArea,20);
+        window.addEventListener('keydown', function (e) {
+            myGameArea.key = e.keyCode;
+        })
+          window.addEventListener('keyup', function (e) {
+            myGameArea.key = false;
+        })
+        window.addEventListener('mousemove', function (e)
+        {
+            myGameArea.x = e.pageX;
+            myGameArea.y = e.pageY;
+        })
     },
     
     clear : function()
@@ -108,6 +125,7 @@ function updateGameArea()
     {
         if (myGamePlayer.crashWith(myGameEnemy[i]))
         {
+            mySound.play();
             myGameArea.stop();
             return;
         }
@@ -134,9 +152,36 @@ function updateGameArea()
     }
     myScore.text="SCORE: " + myGameArea.frameNo;
     myScore.update();
+    myGamePlayer.speedX = 0;
+    myGamePlayer.speedY = 0;
+    if (myGameArea.key && myGameArea.key == 37) {myGamePlayer.speedX = -1; }
+    if (myGameArea.key && myGameArea.key == 39) {myGamePlayer.speedX = 1; }
+    if (myGameArea.key && myGameArea.key == 38) {myGamePlayer.speedY = -1; }
+    if (myGameArea.key && myGameArea.key == 40) {myGamePlayer.speedY = 1; }
+    if (myGameArea.x && myGameArea.y)
+    {
+        myGamePlayer.x = myGameArea.x;
+        myGamePlayer.y = myGameArea.y;
+    }
     myGamePlayer.newPos();
     myGamePlayer.update();
+
 }
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }    
+}
+
 function everyInterval(n)
 {
     if((myGameArea.frameNo / n)% 1 == 0)
