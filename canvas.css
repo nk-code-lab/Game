@@ -19,7 +19,7 @@ canvas {
 
 }
 .gamebutton {
-    display: none;
+    /* display: none; */
     position: absolute;
     left: 200px;
     bottom: 50px;

@@ -158,19 +158,19 @@ function updateGameArea()
     }
     myScore.text="SCORE: " + myGameArea.frameNo;
     myScore.update();
-    myGamePlayer.speedX = 0;
-    myGamePlayer.speedY = 0;
-    if (myGameArea.key && myGameArea.key == 37) {myGamePlayer.speedX = -1; }
-    if (myGameArea.key && myGameArea.key == 39) {myGamePlayer.speedX = 1; }
-    if (myGameArea.key && myGameArea.key == 38) {myGamePlayer.speedY = -1; }
-    if (myGameArea.key && myGameArea.key == 40) {myGamePlayer.speedY = 1; }
+    myGamePlayer.newPos();
+    myGamePlayer.update();
+    // myGamePlayer.speedX = 0;
+    // myGamePlayer.speedY = 0;
+    // if (myGameArea.key && myGameArea.key == 37) {myGamePlayer.speedX = -1; }
+    // if (myGameArea.key && myGameArea.key == 39) {myGamePlayer.speedX = 1; }
+    // if (myGameArea.key && myGameArea.key == 38) {myGamePlayer.speedY = -1; }
+    // if (myGameArea.key && myGameArea.key == 40) {myGamePlayer.speedY = 1; }
     // if (myGameArea.x && myGameArea.y)
     // {
     //     myGamePlayer.x = myGameArea.x;
     //     myGamePlayer.y = myGameArea.y;
     // }
-    myGamePlayer.newPos();
-    myGamePlayer.update();
 
 }
 function sound(src) {
