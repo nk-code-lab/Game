@@ -3,7 +3,7 @@ var myGamePlayer;
 var myGameEnemy = [];
 var myscore;
 var mySound;
-var myBgMusic;
+var myMusic;
 
 
 function startGame()
@@ -13,8 +13,8 @@ function startGame()
     // myGamePlayer = new component(50,40,"green",10,160);
     myScore = new component("30px","consolas", "white",400,30,"text");
     mySound = new sound("bounce.mp3");
-    myBgMusic = new sound("backgroundmusic.mp3");
-    myBgMusic.play();
+    myMusic = new sound("gametheme.mp3");
+    myMusic.play();
 }
 myGameArea = 
 {
@@ -34,16 +34,16 @@ myGameArea =
           window.addEventListener('keyup', function (e) {
             myGameArea.key = false;
         })
-        window.addEventListener('mousemove', function (e)
-        {
-            myGameArea.x = e.pageX;
-            myGameArea.y = e.pageY;
-        })
-        window.addEventListener('touchmove', function (e)
-        {
-            myGameArea.x = e.touches[0].screenX;
-            myGameArea.y = e.touches[0].screenY;
-        })
+        // window.addEventListener('mousemove', function (e)
+        // {
+        //     myGameArea.x = e.pageX;
+        //     myGameArea.y = e.pageY;
+        // })
+        // window.addEventListener('touchmove', function (e)
+        // {
+        //     myGameArea.x = e.touches[0].screenX;
+        //     myGameArea.y = e.touches[0].screenY;
+        // })
     },
     
     clear : function()
