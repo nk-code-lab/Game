@@ -132,7 +132,7 @@ function updateGameArea()
         {
             mySound.play();
             myGameArea.stop();
-            // myMusic.stop();
+            myMusic.stop();
             return;
         }
     }
