@@ -34,16 +34,16 @@ myGameArea =
           window.addEventListener('keyup', function (e) {
             myGameArea.key = false;
         })
-        window.addEventListener('mousemove', function (e)
-        {
-            myGameArea.x = e.pageX;
-            myGameArea.y = e.pageY;
-        })
-        window.addEventListener('touchmove', function (e)
-        {
-            myGameArea.x = e.touches[0].screenX;
-            myGameArea.y = e.touches[0].screenY;
-        })
+        // window.addEventListener('mousemove', function (e)
+        // {
+        //     myGameArea.x = e.pageX;
+        //     myGameArea.y = e.pageY;
+        // })
+        // window.addEventListener('touchmove', function (e)
+        // {
+        //     myGameArea.x = e.touches[0].screenX;
+        //     myGameArea.y = e.touches[0].screenY;
+        // })
     },
     
     clear : function()
@@ -162,10 +162,10 @@ function updateGameArea()
     myGamePlayer.update();
     // myGamePlayer.speedX = 0;
     // myGamePlayer.speedY = 0;
-    // if (myGameArea.key && myGameArea.key == 37) {myGamePlayer.speedX = -1; }
-    // if (myGameArea.key && myGameArea.key == 39) {myGamePlayer.speedX = 1; }
-    // if (myGameArea.key && myGameArea.key == 38) {myGamePlayer.speedY = -1; }
-    // if (myGameArea.key && myGameArea.key == 40) {myGamePlayer.speedY = 1; }
+    if (myGameArea.key && myGameArea.key == 37) {myGamePlayer.speedX = -1; }
+    if (myGameArea.key && myGameArea.key == 39) {myGamePlayer.speedX = 1; }
+    if (myGameArea.key && myGameArea.key == 38) {myGamePlayer.speedY = -1; }
+    if (myGameArea.key && myGameArea.key == 40) {myGamePlayer.speedY = 1; }
     // if (myGameArea.x && myGameArea.y)
     // {
     //     myGamePlayer.x = myGameArea.x;
