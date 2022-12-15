@@ -11,8 +11,12 @@ function startGame()
     myGameArea.start();
     myGamePlayer = new component(60,40,"plane.png",10,160,"image");
     // myGamePlayer = new component(50,40,"green",10,160);
-    myscore = new component("30px","consolas", "white",400,30,"text");
+    myScore = new component("30px","consolas", "white",400,30,"text");
     mySound = new sound("bounce.mp3");
+    myMusic = new sound("gametheme.mp3");
+    myMusic.play();
+}
+function play() {
     myMusic = new sound("gametheme.mp3");
     myMusic.play();
 }
@@ -28,11 +32,7 @@ myGameArea =
         document.body.insertBefore(this.canvas,document.body.childNodes[0]);
         this.frameNo = 0;
         this.interval = setInterval(updateGameArea,20);
-<<<<<<< HEAD
-        window.addEventListener('keydown', function (e) {
-=======
         document.addEventListener('keypress', function (e) {
->>>>>>> 1e9d1d0742273033a4c40327ff102fad75f39e35
             myGameArea.key = e.key;
         })
           document.addEventListener('keyup', function (e) {
@@ -148,8 +148,8 @@ function updateGameArea()
         minHeight = 20;
         maxHeight = 200;
         height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
-        minGap = 70;
-        maxGap = 200;
+        minGap = 65;
+        maxGap = 180;
         gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
         myGameEnemy.push (new component(10,height,"red",x,0));
         myGameEnemy.push(new component(10,x-height-gap,"red",x,height+gap));
@@ -167,7 +167,7 @@ function updateGameArea()
     myGamePlayer.speedX = 0;
     myGamePlayer.speedY = 0;
     if (myGameArea.key && myGameArea.key == 'd') {myGamePlayer.speedX = 1; }
-    if (myGameArea.key && myGameArea.key == 'a') {myGamePlayer.speedX = -1; }
+    if (myGameArea.key && myGameArea.key == 'a') {myGamePlayer.speedX = -2; }
     if (myGameArea.key && myGameArea.key == 'w') {myGamePlayer.speedY = -1; }
     if (myGameArea.key && myGameArea.key == 's') {myGamePlayer.speedY = 1; }
     // if (myGameArea.x && myGameArea.y)
@@ -203,19 +203,19 @@ function everyInterval(n)
 
 function moveup()
 {
-    myGamePlayer.speedY = -1;   
+    myGamePlayer.speedY = -5;   
 }
 function movedown()
 {
-    myGamePlayer.speedY = 1;   
+    myGamePlayer.speedY = 5;   
 }
 function moveleft()
 {
-    myGamePlayer.speedX = -1;   
+    myGamePlayer.speedX = -10;   
 }
 function moveright()
 {
-    myGamePlayer.speedX = 1;   
+    myGamePlayer.speedX = 5;   
 }
 
 function clearmove() 
