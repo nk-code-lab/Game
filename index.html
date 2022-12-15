@@ -8,6 +8,8 @@
     <title>Flying Game</title>
 </head>
 <body onload="startGame()">
+    <button class="gamebutton gamebtn" id="song" onclick="play()">Play with Music</button>
+    <!-- <button onclick="startGame()" class="play">START</button> -->
     <div class="gamebutton">
         <button class="gamebtn" onmousedown="moveup()" onmouseup="clearmove()" ontouchstart="moveup()">UP</button><br><br>
         <button class="gamebtn" id="leftbtn" onmousedown="moveleft()" onmouseup="clearmove()" ontouchstart="moveleft()">LEFT</button>
@@ -17,4 +19,5 @@
     <script src="canvas.js"></script>   
 </body>
 </html>
+
 <!-- Help : https://www.w3schools.com/graphics/game_images.asp -->
