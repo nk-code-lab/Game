@@ -160,8 +160,8 @@ function updateGameArea()
     myScore.update();
     myGamePlayer.newPos();
     myGamePlayer.update();
-    // myGamePlayer.speedX = 0;
-    // myGamePlayer.speedY = 0;
+    myGamePlayer.speedX = 0;
+    myGamePlayer.speedY = 0;
     if (myGameArea.key && myGameArea.key == 'd') {myGamePlayer.speedX = 1; }
     if (myGameArea.key && myGameArea.key == 'a') {myGamePlayer.speedX = -1; }
     if (myGameArea.key && myGameArea.key == 'w') {myGamePlayer.speedY = -1; }
