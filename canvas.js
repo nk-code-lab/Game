@@ -11,7 +11,7 @@ function startGame()
     myGameArea.start();
     myGamePlayer = new component(60,40,"plane.png",10,160,"image");
     // myGamePlayer = new component(50,40,"green",10,160);
-    myScore = new component("30px","consolas", "white",400,30,"text");
+    myscore = new component("30px","consolas", "white",400,30,"text");
     mySound = new sound("bounce.mp3");
     myMusic = new sound("gametheme.mp3");
     myMusic.play();
@@ -29,7 +29,7 @@ myGameArea =
         this.frameNo = 0;
         this.interval = setInterval(updateGameArea,20);
         window.addEventListener('keydown', function (e) {
-            myGameArea.key = e.keyCode;
+            myGameArea.key = e.key;
         })
           window.addEventListener('keyup', function (e) {
             myGameArea.key = false;
