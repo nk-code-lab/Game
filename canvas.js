@@ -28,10 +28,14 @@ myGameArea =
         document.body.insertBefore(this.canvas,document.body.childNodes[0]);
         this.frameNo = 0;
         this.interval = setInterval(updateGameArea,20);
+<<<<<<< HEAD
         window.addEventListener('keydown', function (e) {
+=======
+        document.addEventListener('keypress', function (e) {
+>>>>>>> 1e9d1d0742273033a4c40327ff102fad75f39e35
             myGameArea.key = e.key;
         })
-          window.addEventListener('keyup', function (e) {
+          document.addEventListener('keyup', function (e) {
             myGameArea.key = false;
         })
         // window.addEventListener('mousemove', function (e)
@@ -160,12 +164,12 @@ function updateGameArea()
     myScore.update();
     myGamePlayer.newPos();
     myGamePlayer.update();
-    // myGamePlayer.speedX = 0;
-    // myGamePlayer.speedY = 0;
-    if (myGameArea.key && myGameArea.key == 37) {myGamePlayer.speedX = -1; }
-    if (myGameArea.key && myGameArea.key == 39) {myGamePlayer.speedX = 1; }
-    if (myGameArea.key && myGameArea.key == 38) {myGamePlayer.speedY = -1; }
-    if (myGameArea.key && myGameArea.key == 40) {myGamePlayer.speedY = 1; }
+    myGamePlayer.speedX = 0;
+    myGamePlayer.speedY = 0;
+    if (myGameArea.key && myGameArea.key == 'd') {myGamePlayer.speedX = 1; }
+    if (myGameArea.key && myGameArea.key == 'a') {myGamePlayer.speedX = -1; }
+    if (myGameArea.key && myGameArea.key == 'w') {myGamePlayer.speedY = -1; }
+    if (myGameArea.key && myGameArea.key == 's') {myGamePlayer.speedY = 1; }
     // if (myGameArea.x && myGameArea.y)
     // {
     //     myGamePlayer.x = myGameArea.x;
